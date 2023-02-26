@@ -95,7 +95,7 @@
                   </Action>
                 </Control>
                 <!-- Menu Start -->
-                 <Control xsi:type="Menu" id="Exceldemy.Menu">
+                <Control xsi:type="Menu" id="Exceldemy.Menu">
                   <Label resid="Exceldemy.Dropdown.Label" />
                   <Supertip>
                     <Title resid="Exceldemy.Dropdown.Label" />
@@ -107,22 +107,22 @@
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                   <Items>
-                    <Item id="Exceldemy.Menu.Item1">
+                  <Item id="Exceldemy.Menu.Item1">
                       <Label resid="Exceldemy.Item1.Label"/>
                       <Supertip>
                         <Title resid="Exceldemy.Item1.Label" />
                         <Description resid="Exceldemy.Item1.Tooltip" />
                       </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                    </Item>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16"/>
+                      <bt:Image size="32" resid="Icon.32x32"/>
+                      <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <TaskpaneId>ButtonId1</TaskpaneId>
+                      <SourceLocation resid="Taskpane2.Url"/>
+                    </Action>
+                  </Item>
 
                     <Item id="Exceldemy.Menu.Item2">
                       <Label resid="Exceldemy.Item2.Label"/>
@@ -130,15 +130,15 @@
                         <Title resid="Exceldemy.Item2.Label" />
                         <Description resid="Exceldemy.Item2.Tooltip" />
                       </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>ButtonId1</TaskpaneId>
+                        <SourceLocation resid="Taskpane.Url"/>
+                      </Action>
                     </Item>
 
                   </Items>
@@ -161,6 +161,7 @@
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
         <bt:Url id="Commands.Url" DefaultValue="https://www.contoso.com/commands.html"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://www.contoso.com/taskpane.html"/>
+        <bt:Url id="Taskpane2.Url" DefaultValue="https://www.contoso.com/taskpane2.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
@@ -169,11 +170,17 @@
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="Tab1.TabLabel" DefaultValue="Exceldemy" />
         <bt:String id="TableGroup.Label" DefaultValue="Show Table" />
+        <bt:String id="Exceldemy.Dropdown.Label" DefaultValue="Taskpane Add-In" />
+        <bt:String id="Exceldemy.Item1.Label" DefaultValue="Format Cells Pane" />
+        <bt:String id="Exceldemy.Item2.Label" DefaultValue="Open Taskpane" />
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+        <bt:String id="Exceldemy.Dropdown.Tooltip" DefaultValue="Click to Show Options on this Menu" />
+        <bt:String id="Exceldemy.Item1.Tooltip" DefaultValue="Taskpane in the Menu List. " />
+        <bt:String id="Exceldemy.Item2.Tooltip" DefaultValue="Taskpane in the Menu List." />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
