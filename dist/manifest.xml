@@ -30,8 +30,8 @@
           </GetStarted>
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <CustomTab id="Tab1">
-              <Group id="CommandsGroup">
+          <CustomTab id="Tab1">
+            <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
                 <Icon>
                   <bt:Image size="16" resid="Icon.16x16"/>
@@ -55,21 +55,95 @@
                   </Action>
               </Control>
 
-<Control xsi:type="Button" id="ToggleProtection">   
-          <Label resid="ProtectionButtonLabel" />
-          <Supertip>
-            <Title resid="ProtectionButtonLabel" />
-            <Description resid="ProtectionButtonToolTip" />
-          </Supertip>
-          <Icon>
-            <bt:Image size="16" resid="Icon.16x16"/>
-            <bt:Image size="32" resid="Icon.32x32"/>
-            <bt:Image size="80" resid="Icon.80x80"/>
-          </Icon>
-          <Action xsi:type="ExecuteFunction">
-            <FunctionName>toggleProtection</FunctionName>
-          </Action>
-</Control>
+                <Control xsi:type="Button" id="ToggleProtection">   
+                          <Label resid="ProtectionButtonLabel" />
+                          <Supertip>
+                            <Title resid="ProtectionButtonLabel" />
+                            <Description resid="ProtectionButtonToolTip" />
+                          </Supertip>
+                          <Icon>
+                            <bt:Image size="16" resid="Icon.16x16"/>
+                            <bt:Image size="32" resid="Icon.32x32"/>
+                            <bt:Image size="80" resid="Icon.80x80"/>
+                          </Icon>
+                          <Action xsi:type="ExecuteFunction">
+                            <FunctionName>toggleProtection</FunctionName>
+                          </Action>
+                </Control>
+              </Group>
+              <Group id="TableGroup">
+                <Label resid="TableGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButton3">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+                <!-- Menu Start -->
+                 <Control xsi:type="Menu" id="Exceldemy.Menu">
+                  <Label resid="Exceldemy.Dropdown.Label" />
+                  <Supertip>
+                    <Title resid="Exceldemy.Dropdown.Label" />
+                    <Description resid="Exceldemy.Dropdown.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="Exceldemy.Menu.Item1">
+                      <Label resid="Exceldemy.Item1.Label"/>
+                      <Supertip>
+                        <Title resid="Exceldemy.Item1.Label" />
+                        <Description resid="Exceldemy.Item1.Tooltip" />
+                      </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                    </Item>
+
+                    <Item id="Exceldemy.Menu.Item2">
+                      <Label resid="Exceldemy.Item2.Label"/>
+                      <Supertip>
+                        <Title resid="Exceldemy.Item2.Label" />
+                        <Description resid="Exceldemy.Item2.Tooltip" />
+                      </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                    </Item>
+
+                  </Items>
+                </Control>
+                <!-- Menu End -->
               </Group>
               <Label resid='Tab1.TabLabel' />
             </CustomTab>
@@ -94,6 +168,7 @@
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="Tab1.TabLabel" DefaultValue="Exceldemy" />
+        <bt:String id="TableGroup.Label" DefaultValue="Show Table" />
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
