@@ -11,7 +11,7 @@ Office.onReady((info) => {
     if (!Office.context.requirements.isSetSupported("ExcelApi", "1.7")) {
       console.log("Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.");
     }
-    document.getElementById("random-number").onclick = generateRandomNumber;
+    document.getElementById("random-number").onclick = splitName;
     document.getElementById("open-dialog").onclick = openDialog;
   }
 });
@@ -65,3 +65,35 @@ function processMessage(arg) {
   document.getElementById("user-name").innerHTML = arg.message;
   dialog.close();
 }
+
+const splitName = () => {
+  Excel.run(async function (context) {
+    let sheet = context.workbook.worksheets.getItem("Sheet1");
+    let field1 = sheet.getCell(2, 3);
+    field1.load("values");
+    let field2 = sheet.getCell(2, 4);
+    field2.load("values");
+    let field3 = sheet.getCell(2, 5);
+    field3.load("values");
+    let activeCell = context.workbook.getActiveCell();
+    activeCell.load("values");
+    await context.sync();
+    const cellValueAsArray = activeCell.values[0];
+    const fullName = cellValueAsArray[0];
+    const nameParts = fullName.split(" ");
+
+    if (nameParts.length > 2) {
+      field1.values = nameParts[0];
+      field2.values = nameParts[1];
+      field3.values = nameParts[2];
+    } else {
+      field1.values = nameParts[0];
+      field2.values = "";
+      field3.values = nameParts[1];
+    }
+
+    // console.log(nameParts);
+  }).catch(function (error) {
+    console.log("Error: " + error);
+  });
+};

@@ -4,7 +4,7 @@ Office.onReady((info) => {
     if (!Office.context.requirements.isSetSupported("ExcelApi", "1.7")) {
       console.log("Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.");
     }
-    document.getElementById("formatCells").onclick = formatCells;
+    document.getElementById("formatCells").onclick = setHeight;
   }
 });
 
@@ -13,6 +13,19 @@ const formatCells = () => {
     let range = context.workbook.getSelectedRange();
     range.format.horizontalAlignment = "Center";
     await context.sync();
+  }).catch(function (error) {
+    console.log("Error: " + error);
+  });
+};
+
+const setHeight = () => {
+  Excel.run(async function (context) {
+    let sheet = context.workbook.worksheets.getItem("Sheet1");
+    let activeCell = context.workbook.getActiveCell();
+    precedents = activeCell.getPrecedents();
+
+    await context.sync();
+    console.log(precedents);
   }).catch(function (error) {
     console.log("Error: " + error);
   });
