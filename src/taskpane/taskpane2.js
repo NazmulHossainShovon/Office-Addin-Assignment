@@ -18,14 +18,21 @@ const formatCells = () => {
   });
 };
 
-const setHeight = () => {
-  Excel.run(async function (context) {
-    let sheet = context.workbook.worksheets.getItem("Sheet1");
-    let activeCell = context.workbook.getActiveCell();
-    precedents = activeCell.getPrecedents();
-
+const setHeight = async () => {
+  await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");
+    range.load("dataValidation");
     await context.sync();
-    console.log(precedents);
+
+    range.dataValidation.clear();
+
+    range.dataValidation.rule = {
+      wholeNumber: {
+        formula1: 0,
+        operator: Excel.DataValidationOperator.greaterThan,
+      },
+    };
   }).catch(function (error) {
     console.log("Error: " + error);
   });
